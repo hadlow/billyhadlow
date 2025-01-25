@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Tag from "../components/Tag.astro";
+
+const { content } = Astro.props;
+
+const dateOptions: object = {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+
+const formattedPublishDate = new Date(content.pubDate).toLocaleDateString(
+  "en-US",
+  dateOptions,
+);
+---
+
+<Layout>
+  <article>
+    <div class="mb-12" style="max-width: 65ch;">
+      <div class="sm:flex gap-4 mb-4">
+        {content.tags.map((tag: any) => <Tag text={tag} />)}
+      </div>
+
+      <h1 class="text-4xl font-bold tracking-tight sm:text-5xl mb-4">
+        {content.title}
+      </h1>
+
+      <time
+        datetime={content.pubDate}
+        class="order-first flex items-center text-base"
+      >
+        <span>Published {formattedPublishDate}</span>
+      </time>
+    </div>
+
+    <div class="prose lg:prose-lg dark:prose-invert pb-40">
+      <slot />
+    </div>
+  </article>
+</Layout>

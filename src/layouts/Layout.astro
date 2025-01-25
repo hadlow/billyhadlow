@@ -1,0 +1,41 @@
+---
+import "@fontsource-variable/nunito";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/180x180.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon/16x16.png" />
+		<link rel="mask-icon" href="/favicon/96x96.png" color="#1f1d7c" />
+
+		<title>Billy Hadlow</title>
+	</head>
+
+	<body class="bg-primary text-white min-h-screen">
+		<div class="py-3 px-4 md:px-12">
+			<header class="sm:flex items-end justify-between mb-12">
+				<div>
+					<a
+						href="/"
+						class="font-extrabold text-2xl hover:opacity-50 transition-opacity duration-300 ease-in-out"
+						>Billy Hadlow</a
+					>
+				</div>
+
+				<nav class="font-extrabold">
+					<a href="https://github.com/hadlow">GITHUB</a> &bullet; <a
+						href="https://www.linkedin.com/in/billyhadlow/">LINKEDIN</a
+					>
+				</nav>
+			</header>
+
+			<slot />
+		</div>
+	</body>
+</html>
