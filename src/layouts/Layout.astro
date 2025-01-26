@@ -1,5 +1,7 @@
 ---
 import "@fontsource-variable/nunito";
+
+const { pageTitle } = Astro.props;
 ---
 
 <!doctype html>
@@ -30,7 +32,7 @@ import "@fontsource-variable/nunito";
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon/16x16.png" />
 		<link rel="mask-icon" href="/favicon/96x96.png" color="#1f1d7c" />
 
-		<title>Billy Hadlow</title>
+		<title>{pageTitle}</title>
 	</head>
 
 	<body class="bg-primary text-white min-h-screen">
