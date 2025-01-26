@@ -20,7 +20,7 @@ Next thing is to setup is your GitHub personal access token. This is used to all
 
 To create a token, go to GitHub and click on your profile picture, in the top right. Then go to Settings and then Developer Settings on the left. Then click Personal access tokens and Fine-grained tokens, then Generate new token.
 
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ym4n2l61lgiw6vjtrt0a.png)
+![Personal access tokens sidebar screenshot](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ym4n2l61lgiw6vjtrt0a.png)
 
 Name your token something descriptive. I've gone with `GH_TOKEN_GO_PUBLISH`. Now scroll down and give it access to both the main repository and the `homebrew-` repository.
 
@@ -172,15 +172,15 @@ Update all of the placeholders where necessary.
 
 You can now commit and push these changes. You should see something running in your Actions tab. Take a look at these steps, they should be building and releasing your Go application.
 
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z98s4daeqwyft4y9iw3e.png)
+![GitHub Actions steps screenshot](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z98s4daeqwyft4y9iw3e.png)
 
 Now take a look at your repo, it should have a tag created by semantic release.
 
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eyoahomj7mz0j7qermwi.png)
+![GitHub tag screenshot](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eyoahomj7mz0j7qermwi.png)
 
 And then, in your `homebrew-` repo, you should see a Formula folder.
 
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9ay2xxiz6jnslvp0r2go.png)
+![Formula in git repo screenshot](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9ay2xxiz6jnslvp0r2go.png)
 
 ## 7. Installing our application
 
@@ -199,5 +199,3 @@ brew install gopublish
 ## Wrapping up
 
 And that's pretty much it. You can refine all of this further to suit your needs, but I wanted to keep it as simple as possible for the sake of making this guide easier to follow.
-
-If you have any questions, I'd be glad to answer them in the comments!
