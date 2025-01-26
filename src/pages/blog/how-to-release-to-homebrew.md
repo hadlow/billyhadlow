@@ -190,10 +190,45 @@ To install, run the Homebrew tap command using the format `brew tap <GITHUB USER
 brew tap hadlow/gopublish
 ```
 
+You should see an output that looks something like this:
+
+```
+==> Tapping hadlow/gopublish
+Cloning into '/opt/homebrew/Library/Taps/hadlow/homebrew-gopublish'...
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 12 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (12/12), done.
+Resolving deltas: 100% (2/2), done.
+Tapped 2 formulae (14 files, 9.8KB).
+```
+
 Then we can install with:
 
 ```
 brew install gopublish
+```
+
+Which will then give us:
+
+```
+==> Fetching hadlow/gopublish/gopublish
+==> Downloading https://github.com/hadlow/gopublish/releases/download/v1.0.1/gopublish_Darwin_arm64.tar.gz
+==> Downloading from https://objects.githubusercontent.com/github-production-release-asset-2e65be/92130980
+################################################################################################### 100.0%
+==> Installing gopublish from hadlow/gopublish
+🍺  /opt/homebrew/Cellar/gopublish/1.0.1: 5 files, 1.5MB, built in 0 seconds
+==> Running `brew cleanup gopublish`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+```
+
+Then when I run gopublish, it works!
+
+```
+> gopublish
+Hello, world
 ```
 
 ## Wrapping up
