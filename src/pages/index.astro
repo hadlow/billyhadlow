@@ -14,22 +14,32 @@ const dateOptions: object = {
 	<div style="max-width: 65ch;">
 		<ul>
 			{
-				posts.map((post: any) => (
-					<li>
-						<a href={post.url}>
-							<div class="rounded md:px-6 py-5 md:-mx-6 transition-colors duration-300 ease-in-out hover:bg-white/10">
-								<h4 class="text-lg font-bold mb-2">{post.frontmatter.title}</h4>
-								<p class="text-gray-100 mb-2">{post.frontmatter.description}</p>
-								<p class="text-gray-100">
-									{new Date(post.frontmatter.pubDate).toLocaleDateString(
-										"en-US",
-										dateOptions,
-									)}
-								</p>
-							</div>
-						</a>
-					</li>
-				))
+				posts
+					.sort(
+						(pa: any, pb: any) =>
+							new Date(pb.frontmatter.pubDate).valueOf() -
+							new Date(pa.frontmatter.pubDate).valueOf(),
+					)
+					.map((post: any) => (
+						<li>
+							<a href={post.url}>
+								<div class="rounded md:px-6 py-5 md:-mx-6 transition-colors duration-300 ease-in-out hover:bg-white/10 mb-6">
+									<h4 class="text-xl font-bold mb-2">
+										{post.frontmatter.title}
+									</h4>
+									<p class="text-gray-100 mb-2">
+										{post.frontmatter.description}
+									</p>
+									<em class="text-gray-100">
+										{new Date(post.frontmatter.pubDate).toLocaleDateString(
+											"en-US",
+											dateOptions,
+										)}
+									</em>
+								</div>
+							</a>
+						</li>
+					))
 			}
 		</ul>
 	</div>
