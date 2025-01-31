@@ -11,36 +11,62 @@ const dateOptions: object = {
 ---
 
 <Layout pageTitle="Billy Hadlow - Software engineer and tech nerd">
-	<div style="max-width: 65ch;">
-		<ul>
-			{
-				posts
-					.sort(
-						(pa: any, pb: any) =>
-							new Date(pb.frontmatter.pubDate).valueOf() -
-							new Date(pa.frontmatter.pubDate).valueOf(),
-					)
-					.map((post: any) => (
-						<li>
-							<a href={post.url}>
-								<div class="rounded md:px-6 py-5 md:-mx-6 transition-colors duration-300 ease-in-out hover:bg-white/10 mb-6">
-									<h4 class="text-xl font-bold mb-2">
-										{post.frontmatter.title}
-									</h4>
-									<p class="text-gray-100 mb-2">
-										{post.frontmatter.description}
-									</p>
-									<em class="text-gray-100">
-										{new Date(post.frontmatter.pubDate).toLocaleDateString(
-											"en-US",
-											dateOptions,
-										)}
-									</em>
-								</div>
-							</a>
-						</li>
-					))
-			}
-		</ul>
+	<div class="flex">
+		<div class="max-w-2xl">
+			<div class="font-bold text-lg mt-6 mb-12">
+				<p class="mb-4">
+					👋 Hi, I’m Billy - a developer based in Vancouver, Canada
+				</p>
+
+				<p class="mb-4">
+					🚧 I'm currently building <a
+						href="https://sendex.dev"
+						class="underline">sendex.dev</a
+					>
+				</p>
+
+				<p>
+					<a href="https://github.com/hadlow" class="underline">GitHub</a> &bull;
+					<a href="https://www.linkedin.com/in/billyhadlow/" class="underline"
+						>LinkedIn</a
+					> &bull;
+					<a
+						href="https://bsky.app/profile/billyhadlow.bsky.social"
+						class="underline">Bluesky</a
+					>
+				</p>
+			</div>
+
+			<ul>
+				{
+					posts
+						.sort(
+							(pa: any, pb: any) =>
+								new Date(pb.frontmatter.pubDate).valueOf() -
+								new Date(pa.frontmatter.pubDate).valueOf(),
+						)
+						.map((post: any) => (
+							<li>
+								<a href={post.url}>
+									<div class="rounded md:px-6 py-5 md:-mx-6 transition-colors duration-300 ease-in-out hover:bg-white/10 mb-6">
+										<h4 class="text-xl font-bold mb-2">
+											{post.frontmatter.title}
+										</h4>
+										<p class="text-gray-100 mb-2">
+											{post.frontmatter.description}
+										</p>
+										<em class="text-gray-100">
+											{new Date(post.frontmatter.pubDate).toLocaleDateString(
+												"en-US",
+												dateOptions,
+											)}
+										</em>
+									</div>
+								</a>
+							</li>
+						))
+				}
+			</ul>
+		</div>
 	</div>
 </Layout>

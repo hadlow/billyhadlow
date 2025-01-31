@@ -18,7 +18,7 @@ const formattedPublishDate = new Date(content.pubDate).toLocaleDateString(
 
 <Layout pageTitle={content.title + " - Billy Hadlow"}>
   <article>
-    <div class="mb-12" style="max-width: 65ch;">
+    <div class="mb-12 max-w-2xl">
       <div class="sm:flex gap-4 mb-4">
         {content.tags.map((tag: any) => <Tag text={tag} />)}
       </div>
@@ -35,8 +35,34 @@ const formattedPublishDate = new Date(content.pubDate).toLocaleDateString(
       </time>
     </div>
 
-    <div class="prose lg:prose-lg dark:prose-invert pb-40">
+    <div class="prose lg:prose-lg dark:prose-invert max-w-2xl mb-12">
       <slot />
     </div>
+
+    <div class="rounded md:px-6 py-5 bg-black/25 max-w-2xl font-bold">
+      <h6 class="mb-4 text-sm uppercase">About the author</h6>
+
+      <p class="mb-4">👋 Hi, I’m Billy</p>
+
+      <p class="mb-4">
+        🚧 I'm a software engineer, currently building <a
+          href="https://sendex.dev"
+          class="underline">sendex.dev</a>
+      </p>
+
+      <p>
+        📝 Like this article? To stay up-to-date, follow me on <a
+          href="https://github.com/hadlow"
+          class="underline">GitHub</a
+        > and <a
+          href="https://bsky.app/profile/billyhadlow.bsky.social"
+          class="underline">Bluesky</a
+        >.
+      </p>
+    </div>
   </article>
+
+  <footer class="mt-12 pt-6 pb-24 border-t border-white/25 max-w-2xl">
+    &copy; Billy Hadlow {new Date(content.pubDate).getFullYear()}
+  </footer>
 </Layout>
