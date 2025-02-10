@@ -41,6 +41,8 @@ Go to your repository settings and go to Environments. Create a new environment 
 
 ## 4. Add Semantic Release
 
+Semantic-release will automatically generate the Git version tags for our releases. If you use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/), then tags will follow semantic versioning standards. Tags will be generated whenever we commit to our main branch.
+
 Before adding Semantic release, we'll need a GitHub Actions file. Create a file named release.yml and put it in your main repository in the .github/workflows directory. Paste in the following:
 
 ```yml

@@ -6,6 +6,8 @@ pubDate: '2025-02-05'
 tags: ["api", "postman", "go", "sendex", "end-to-end-testing"]
 ---
 
+![Demo of Sendex](https://github.com/hadlow/sendex/raw/main/demo.gif)
+
 For the past few months I have been working on a Go based CLI tool called [Sendex](https://sendex.dev). Sendex is an API testing tool that uses YAML files for configuration. This can be used either as a lightweight alternative to [Postman](https://www.postman.com), or as an [end-to-end API testing](https://sendex.dev/learn-more/testing/) tool that can integrate with your CI/CD pipelines.
 
 ## How does it work?
